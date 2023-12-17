@@ -41,12 +41,15 @@ class Item:
         return self.price * self.pay_rate
 
     @property
-    def name(self, ):
+    def name(self):
         return self.__name
 
     @name.setter
     def name(self, name):
-        self.__name = name[:10]
+        if len(name) > 10:
+            self.__name = name[:10]
+        else:
+            self.__name = name
 
     @classmethod
     def instantiate_from_csv(cls, data):
