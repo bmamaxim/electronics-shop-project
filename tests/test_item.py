@@ -10,5 +10,4 @@ def test_main():
     assert item1.name == "Смартфон"
     assert item1.quantity == 20
     assert isinstance(item1.all, list)
-def test_apply_discount():
-    10000 * 0.85 == 8500.0
+
