@@ -38,7 +38,7 @@ class Item:
         """
         Применяет установленную скидку для конкретного товара.
         """
-        return self.price * self.pay_rate
+        self.price *= self.pay_rate
 
     @property
     def name(self):

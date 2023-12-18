@@ -13,8 +13,6 @@ def test_main():
     item1.name = 'СуперСмартфон'
     assert item1.name == 'СуперСмарт'
 
-def test_apply_discount():
-    10000 * 0.85 == 8500.0
 
 def test_string_to_number():
     assert Item.string_to_number('5') == 5
