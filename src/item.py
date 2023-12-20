@@ -69,3 +69,9 @@ class Item:
         статический метод, возвращающий число из числа-строки
         """
         return int(float(x))
+
+    def __repr__(self):
+        return f"Item('{self.__name}', {self.price}, {self.quantity})"
+
+    def __str__(self):
+        return f"{self.__name}"
