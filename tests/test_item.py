@@ -1,5 +1,6 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 from src.item import Item
+from src.keyboard import Keyboard
 from src.phone import Phone
 
 
@@ -27,3 +28,9 @@ def test_string_to_number():
 
     item1 = Item("Смартфон", 10000, 20)
     assert item1 + phone1 == 25
+
+    kb = Keyboard('Dark Project KD87A', 9600, 5)
+    assert str(kb) == "Dark Project KD87A"
+    assert str(kb.language) == "EN"
+    kb.change_lang()
+    assert str(kb.language) == "RU"

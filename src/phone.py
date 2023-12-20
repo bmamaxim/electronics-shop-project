@@ -3,7 +3,7 @@ from src.item import Item
 
 class Phone(Item):
     """
-    Phone` содержит все атрибуты класса `Item` и дополнительно атрибут,
+    Phone: содержит все атрибуты класса `Item` и дополнительно атрибут,
      содержащий количество поддерживаемых сим-карт
     """
     def __init__(self,  name: str, price: float, quantity: int, number_of_sim: int):
@@ -15,3 +15,4 @@ class Phone(Item):
 
     def __str__(self):
         return f"{self.name}"
+
