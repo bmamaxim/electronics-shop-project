@@ -1,4 +1,6 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
+import pytest
+
 from src.item import Item
 from src.keyboard import Keyboard
 from src.phone import Phone
@@ -26,6 +28,7 @@ def test_string_to_number():
     assert repr(phone1) == "Phone('iPhone 14', 120000, 5, 2)"
     assert phone1.number_of_sim == 2
 
+
     item1 = Item("Смартфон", 10000, 20)
     assert item1 + phone1 == 25
 
@@ -34,3 +37,7 @@ def test_string_to_number():
     assert str(kb.language) == "EN"
     kb.change_lang()
     assert str(kb.language) == "RU"
+
+def test_instantiate_from_csv():
+    Item.instantiate_from_csv("")
+    Item.instantiate_from_csv("../src/item_t.csv")
