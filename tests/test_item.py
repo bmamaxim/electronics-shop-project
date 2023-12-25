@@ -13,6 +13,9 @@ def test_main():
     item1.name = 'СуперСмартфон'
     assert item1.name == 'СуперСмарт'
 
+    item1 = Item("Смартфон", 10000, 20)
+    assert repr(item1) == "Item('Смартфон', 10000, 20)"
+    assert str(item1) == 'Смартфон'
 
 def test_string_to_number():
     assert Item.string_to_number('5') == 5
