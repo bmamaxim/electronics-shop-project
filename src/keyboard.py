@@ -1,8 +1,11 @@
 from src.item import Item
 
-
-class Language:
-
+class Mixin_lang:
+    """
+     классе-миксин c дополнительным функционалом
+     по хранению и изменению раскладки клавиатуры ,
+     который “подмешивается” в цепочку наследования класса `Keyboard`.
+    """
     def __init__(self):
         self.__language = 'EN'
 
@@ -10,19 +13,18 @@ class Language:
     def language(self):
         return self.__language
 
-    @language.setter
-    def language(self, language):
-        self.__language = language
 
     def change_lang(self):
+        """
+        метод для изменения языка (раскладки клавиатуры)
+        """
         if self.language == "EN":
-            self.language = "RU"
+            self.__language = "RU"
         else:
-            self.language = "EN"
+            self.__language = "EN"
 
 
-class Keyboard(Item, Language):
-        def __init__(self, name: str, price: float, quantity: int):
-            super().__init__(name, price, quantity)
-            Language.__init__(self)
-
+class Keyboard(Item, Mixin_lang):
+    def __init__(self, name: str, price: float, quantity: int):
+        super().__init__(name, price, quantity)
+        Mixin_lang.__init__(self)
