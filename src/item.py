@@ -93,6 +93,10 @@ class Item:
         return self.__name
 
     def __add__(self, other):
+        """
+        Метод сложения экземпляров класса `Phone` и `Item`
+        (сложение по количеству товара в магазине)
+        """
         if issubclass(other.__class__, self.__class__):
             return self.quantity + other.quantity
         else:
